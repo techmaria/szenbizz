@@ -38,4 +38,15 @@
         });
       }
 
+      const playButtons = document.querySelectorAll('.showcase__play');
+      playButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const video = btn.querySelector('video');
+          if (!video) return;
+          btn.classList.add('is-playing');
+          video.setAttribute('controls', '');
+          video.play().catch(() => {});
+        });
+      });
+
     })();
